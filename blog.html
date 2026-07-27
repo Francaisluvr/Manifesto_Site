@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permission to Play | Southpaw Handmade</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6B4C9A;
+            --secondary: #5B9AA6;
+            --accent: #9DD9C5;
+            --cream: #FAF3E0;
+            --pale-grey: #E8E8E8;
+            --text: #2C2C2C;
+            --light: #FFF8F3;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            color: var(--text);
+            background: var(--cream);
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #8B6FB8 100%);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            font-style: italic;
+            opacity: 0.95;
+            font-family: 'Georgia', serif;
+        }
+
+        nav {
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-family: 'Trebuchet MS', sans-serif;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--cream) 0%, var(--pale-grey) 100%);
+            padding: 4rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '✨';
+            position: absolute;
+            font-size: 3rem;
+            opacity: 0.1;
+            top: 20%;
+            left: 10%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '🎨';
+            position: absolute;
+            font-size: 3rem;
+            opacity: 0.1;
+            bottom: 20%;
+            right: 10%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-family: 'Brush Script MT', cursive;
+            position: relative;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+
+        .intro-text {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 15px rgba(107, 76, 154, 0.1);
+            border-left: 5px solid var(--accent);
+        }
+
+        .intro-text p {
+            font-size: 1.1rem;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .intro-text p:last-child {
+            margin-bottom: 0;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .blog-grid {
+            display: grid;
+            gap: 2.5rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(107, 76, 154, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--accent);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(107, 76, 154, 0.2);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-image::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .blog-content {
+            padding: 2rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+            flex-wrap: wrap;
+        }
+
+        .blog-category {
+            background: var(--accent);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .blog-card h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-family: 'Georgia', serif;
+        }
+
+        .blog-card p {
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+
+        .read-more {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-family: 'Trebuchet MS', sans-serif;
+        }
+
+        .read-more:hover {
+            background: var(--primary);
+            transform: translateX(5px);
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .footer-quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin: 1rem 0 2rem 0;
+            opacity: 0.95;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+            background: rgba(255,255,255,0.1);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+            background: rgba(255,255,255,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .blog-card h2 {
+                font-size: 1.5rem;
+            }
+
+            .intro-text {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">✨ Southpaw Handmade ✨</div>
+        <p class="tagline">Curious Hands. Creative Heart.</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="coming-soon.html">Patterns</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="coming-soon.html">Shop</a></li>
+            <li><a href="coming-soon.html">About</a></li>
+            <li><a href="coming-soon.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1>Permission to Play</h1>
+        <p>Stories, inspiration, and creative adventures for makers who believe whimsy isn't optional—it's survival</p>
+    </section>
+
+    <div class="container">
+        <div class="intro-text">
+            <p>Permission to Play is about loosening your grip, following curiosity, and letting your hands wander without a plan or a deadline. It’s about sewing for the joy of it, choosing colors just because they make you smile, and starting projects that don’t need to be optimized, shared, or explained.
+            Here, play counts as progress. Imperfect counts as finished. And joy is a perfectly good reason to begin.
+            </p>
+        </div>
+
+        <div class="blog-grid">
+            <!-- Blog Post 1 -->
+            <article class="blog-card">
+                <div class="blog-image">🎨</div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">Permission to Play</span>
+                        <span>January 10, 2026</span>
+                    </div>
+                    <h2>Whatever Happened to Whimsy?</h2>
+                    <p>Somewhere between childhood and adulthood, we're told whimsy is frivolous—that creativity should be serious, productive, or reserved for kids. Here's why we believe the opposite, and why your next project might be exactly what you need...</p>
+                    <a href="whatever-happened-to-whimsy.html" class="read-more">Read More →</a>
+                </div>
+            </article>
+
+            <!-- Blog Post 2 -->
+            <article class="blog-card">
+                <div class="blog-image">✨</div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">Permission to Play</span>
+                        <span>January 5, 2026</span>
+                    </div>
+                    <h2>When Did Creativity Start Needing a ROI?</h2>
+                    <p>WWhen did creativity stop being something we did and start being something we had to justify? This post explores how making for joy slowly turned into making for results and why your creativity does not owe anyone productivity, profit, or proof. A gentle reminder that creating simply because it feels good is reason enough.</p>
+                    <a href="when-did-creativity-start-needing-a-roi.html" class="read-more">Read More →</a>
+                </div>
+            </article>
+
+            <!-- Blog Post 3 -->
+            <article class="blog-card">
+                <div class="blog-image">🎪</div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">Permission to Play</span>
+                        <span>December 28, 2025</span>
+                    </div>
+                    <h2>More Than a Hobby: Being Seen as a Creator, Not Just a Consumer /h2>
+                    <p>YScrolling, saving, and watching can make creativity feel distant, like something you admire instead of something you do. This post is about stepping out of spectator mode and recognizing yourself as a creator, not just a consumer. A reminder that making something real with your hands matters and that your creativity deserves to take up space.</p>
+                    <a href="more-than-a-hobby.html" class="read-more">Read More →</a>
+                </div>
+            </article>
+
+            <!-- Blog Post 4 -->
+            <article class="blog-card">
+                <div class="blog-image">🌟</div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">Permission to Play</span>
+                        <span>December 20, 2025</span>
+                    </div>
+                    <h2>Sewing as Therapy: Finding Calm in the Chaos<</h2>
+                    <p>When life feels loud and overwhelming, sewing can become a quiet place to land. This post explores how the simple act of stitching, focusing, and creating something with your hands can bring calm, clarity, and comfort in the middle of the chaos. A gentle reminder that sometimes making is the best kind of therapy.</p>
+                    <a href="sewing-as-therapy.html" class="read-more">Read More →</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p><strong>Southpaw Handmade</strong></p>
+            <p class="footer-quote">"Creativity lives here. Come play awhile. Imagination isn't optional."</p>
+            <div class="social-links">
+                <a href="https://www.pinterest.com/SouthpawHandmade" target="_blank" rel="noopener noreferrer">
+                    Pinterest
+                </a>
+                <a href="https://www.instagram.com/SouthpawHandmade" target="_blank" rel="noopener noreferrer">
+                    Instagram
+                </a>
+            </div>
+            <p style="margin-top: 2rem; font-size: 0.9rem;">&copy; 2026 Southpaw Handmade. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add dynamic border color on hover
+        const blogCards = document.querySelectorAll('.blog-card');
+        blogCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.borderTop = '4px solid var(--secondary)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.borderTop = '4px solid var(--accent)';
+            });
+        });
+
+        // Add parallax effect to hero
+        window.addEventListener('scroll', function() {
+            const hero = document.querySelector('.hero');
+            const scrolled = window.pageYOffset;
+            if (hero && scrolled < window.innerHeight) {
+                hero.style.transform = 'translateY(' + (scrolled * 0.5) + 'px)';
+            }
+        });
+    </script>
+</body>
+</html>
