@@ -1,0 +1,680 @@
+/* =========================================
+   SOUTHPAW HANDMADE
+   Design System v1.0
+========================================= */
+
+
+/* ---------- ROOT VARIABLES ---------- */
+
+:root {
+
+    --paper: #FAF7F2;
+    --white: #FFFFFF;
+
+    --ink: #313638;
+    --navy: #314E6E;
+    --teal: #5B8A86;
+    --lavender: #B9ABC9;
+    --gold: #D4AF6A;
+
+    --serif: "Cormorant Garamond", serif;
+    --sans: "Source Sans 3", sans-serif;
+
+    --max-width: 1200px;
+
+    --shadow:
+        0 20px 50px rgba(49, 54, 56, 0.08);
+
+}
+
+
+/* ---------- RESET ---------- */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    background: var(--paper);
+
+    color: var(--ink);
+
+    font-family: var(--sans);
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+}
+
+
+
+/* ---------- TYPOGRAPHY ---------- */
+
+
+h1,
+h2,
+h3 {
+
+    font-family: var(--serif);
+
+    font-weight: 500;
+
+    line-height: 1.1;
+
+}
+
+
+h1 {
+
+    font-size: clamp(3.5rem, 8vw, 6rem);
+
+    color: var(--navy);
+
+}
+
+
+h2 {
+
+    font-size: clamp(2.5rem, 5vw, 4rem);
+
+    color: var(--navy);
+
+}
+
+
+h3 {
+
+    font-size: 2rem;
+
+    color: var(--navy);
+
+}
+
+
+p {
+
+    max-width: 650px;
+
+}
+
+
+a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+
+
+
+/* ---------- HEADER ---------- */
+
+
+.site-header {
+
+    width: 100%;
+
+    max-width: var(--max-width);
+
+    margin: auto;
+
+    padding: 2rem 5%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+
+.logo span {
+
+    display: block;
+
+    font-family: var(--serif);
+
+    font-size: 2rem;
+
+    color: var(--navy);
+
+}
+
+
+.logo small {
+
+    color: var(--teal);
+
+    letter-spacing: .08em;
+
+    text-transform: uppercase;
+
+    font-size: .75rem;
+
+}
+
+
+
+nav {
+
+    display: flex;
+
+    gap: 2rem;
+
+}
+
+
+nav a {
+
+    font-size: .95rem;
+
+    transition: color .3s ease;
+
+}
+
+
+nav a:hover {
+
+    color: var(--teal);
+
+}
+
+
+
+
+
+/* ---------- BUTTONS ---------- */
+
+
+.button {
+
+    display: inline-block;
+
+    background: var(--navy);
+
+    color: white;
+
+    padding: 1rem 2.4rem;
+
+    border-radius: 999px;
+
+    margin-top: 2rem;
+
+    transition:
+        transform .3s ease,
+        background .3s ease;
+
+}
+
+
+.button:hover {
+
+    background: var(--teal);
+
+    transform: translateY(-3px);
+
+}
+
+
+
+
+
+/* ---------- SMALL LABEL ---------- */
+
+
+.eyebrow {
+
+    color: var(--teal);
+
+    text-transform: uppercase;
+
+    letter-spacing: .18em;
+
+    font-size: .8rem;
+
+    margin-bottom: 1.5rem;
+
+}
+
+
+
+
+
+/* ---------- HERO ---------- */
+
+
+.hero {
+
+    max-width: var(--max-width);
+
+    margin: auto;
+
+    padding: 5rem 5% 8rem;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 5rem;
+
+    align-items: center;
+
+}
+
+
+
+.hero-image img {
+
+    width: 100%;
+
+    height: 700px;
+
+    object-fit: cover;
+
+    border-radius: 200px 200px 0 0;
+
+    box-shadow: var(--shadow);
+
+}
+
+
+
+.hero-text {
+
+    font-size: 1.25rem;
+
+    margin: 2rem 0;
+
+}
+
+
+.signature {
+
+    font-family: var(--serif);
+
+    font-size: 1.5rem;
+
+    color: var(--navy);
+
+}
+
+
+
+
+
+/* ---------- SECTIONS ---------- */
+
+
+section {
+
+    padding: 7rem 5%;
+
+}
+
+
+
+.section-heading {
+
+    max-width: 800px;
+
+    margin-bottom: 3rem;
+
+}
+
+
+
+
+
+/* ---------- MANIFESTO ---------- */
+
+
+.manifesto {
+
+    background: var(--white);
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 5rem;
+
+}
+
+
+
+.manifesto-text p {
+
+    margin-bottom: 1.5rem;
+
+}
+
+
+
+.text-link {
+
+    color: var(--teal);
+
+    font-weight: 600;
+
+}
+
+
+
+
+
+/* ---------- PILLARS ---------- */
+
+
+.pillars {
+
+    max-width: var(--max-width);
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap:2rem;
+
+}
+
+
+
+.pillar {
+
+    background:white;
+
+    padding:3rem;
+
+    border-radius:30px;
+
+    box-shadow:var(--shadow);
+
+    transition:transform .3s ease;
+
+}
+
+
+
+.pillar:hover {
+
+    transform:translateY(-8px);
+
+}
+
+
+
+
+
+/* ---------- FEATURE SECTIONS ---------- */
+
+
+.feature {
+
+    max-width:var(--max-width);
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:5rem;
+
+    align-items:center;
+
+}
+
+
+
+.feature.reverse .feature-image {
+
+    order:2;
+
+}
+
+
+
+.feature-image img {
+
+    width:100%;
+
+    height:550px;
+
+    object-fit:cover;
+
+    border-radius:30px;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+
+
+
+/* ---------- JOURNAL ---------- */
+
+
+.journal {
+
+    background:white;
+
+    text-align:center;
+
+}
+
+
+
+.journal > p,
+.journal > h2 {
+
+    margin-left:auto;
+
+    margin-right:auto;
+
+}
+
+
+
+.journal-grid {
+
+    max-width:var(--max-width);
+
+    margin:4rem auto 0;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:2rem;
+
+}
+
+
+
+.journal article {
+
+    text-align:left;
+
+    padding:2.5rem;
+
+    background:var(--paper);
+
+    border-radius:30px;
+
+}
+
+
+
+
+
+/* ---------- CTA ---------- */
+
+
+.cta {
+
+    text-align:center;
+
+    background:var(--navy);
+
+    color:white;
+
+}
+
+
+
+.cta h2 {
+
+    color:white;
+
+}
+
+
+
+.cta p {
+
+    margin:auto;
+
+    font-size:1.3rem;
+
+}
+
+
+
+
+
+/* ---------- FOOTER ---------- */
+
+
+footer {
+
+    text-align:center;
+
+    padding:4rem 5%;
+
+    font-family:var(--serif);
+
+    color:var(--navy);
+
+    font-size:1.3rem;
+
+}
+
+
+
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+
+@media(max-width:900px){
+
+
+    .site-header {
+
+        flex-direction:column;
+
+        gap:1.5rem;
+
+    }
+
+
+    nav {
+
+        gap:1rem;
+
+    }
+
+
+    .hero,
+    .manifesto,
+    .feature {
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .hero {
+
+        padding-top:2rem;
+
+    }
+
+
+    .hero-image img {
+
+        height:450px;
+
+    }
+
+
+    .feature.reverse .feature-image {
+
+        order:0;
+
+    }
+
+
+    .pillars,
+    .journal-grid {
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    section {
+
+        padding:4rem 5%;
+
+    }
+
+
+}
+/* =========================================
+   SCROLL ANIMATIONS
+========================================= */
+
+
+.fade-section {
+
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+
+}
+
+
+
+.fade-section.visible {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
