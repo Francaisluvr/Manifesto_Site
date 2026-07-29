@@ -1,548 +1,32 @@
-<!DOCTYPE html>
+More than a Hobby 
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>More Than a Hobby: Being Seen as a Creator, Not Just a Consumer | Southpaw Handmade</title>
-    <meta name="description" content="Crafting isn’t “just a hobby.” It’s identity, intention, and courage. Step out of consumption mode and into your power as a creator.">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #6B4C9A;
-            --secondary: #5B9AA6;
-            --accent: #9DD9C5;
-            --cream: #FAF3E0;
-            --pale-grey: #E8E8E8;
-            --text: #2C2C2C;
-            --light: #FFF8F3;
-        }
-
-        body {
-            font-family: 'Georgia', serif;
-            color: var(--text);
-            background: var(--cream);
-            line-height: 1.8;
-        }
-
-        header {
-            background: linear-gradient(135deg, var(--primary) 0%, #8B6FB8 100%);
-            color: white;
-            padding: 2rem 1rem;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-
-        .logo {
-            font-family: 'Brush Script MT', cursive;
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .tagline {
-            font-size: 1.1rem;
-            font-style: italic;
-            opacity: 0.95;
-            font-family: 'Georgia', serif;
-        }
-
-        nav {
-            background: white;
-            padding: 1rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            font-family: 'Trebuchet MS', sans-serif;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        nav a:hover {
-            color: var(--secondary);
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: width 0.3s;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        .breadcrumb {
-            max-width: 800px;
-            margin: 2rem auto 0;
-            padding: 0 1rem;
-            font-size: 0.9rem;
-        }
-
-        .breadcrumb a {
-            color: var(--secondary);
-            text-decoration: none;
-        }
-
-        .breadcrumb a:hover {
-            text-decoration: underline;
-        }
-
-        .breadcrumb span {
-            color: #666;
-            margin: 0 0.5rem;
-        }
-
-        article {
-            max-width: 800px;
-            margin: 3rem auto;
-            padding: 0 1rem;
-        }
-
-        .post-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .post-category {
-            display: inline-block;
-            background: var(--accent);
-            color: var(--primary);
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .post-title {
-            font-size: 3rem;
-            color: var(--primary);
-            font-family: 'Brush Script MT', cursive;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .post-meta {
-            color: #666;
-            font-size: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .post-meta span {
-            margin: 0 1rem;
-        }
-
-        .featured-image {
-            width: 100%;
-            height: 400px;
-            background: linear-gradient(135deg, var(--secondary), var(--accent));
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 6rem;
-            margin-bottom: 3rem;
-            box-shadow: 0 8px 25px rgba(107, 76, 154, 0.15);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .featured-image::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
-            animation: shimmer 4s infinite;
-        }
-
-        @keyframes shimmer {
-            0% { transform: translate(-50%, -50%) rotate(0deg); }
-            100% { transform: translate(-50%, -50%) rotate(360deg); }
-        }
-
-        .post-content {
-            background: white;
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(107, 76, 154, 0.1);
-            border-left: 5px solid var(--accent);
-        }
-
-        .post-content h2 {
-            color: var(--primary);
-            font-size: 2rem;
-            margin: 2rem 0 1rem 0;
-            font-family: 'Georgia', serif;
-        }
-
-        .post-content h3 {
-            color: var(--secondary);
-            font-size: 1.5rem;
-            margin: 1.5rem 0 1rem 0;
-        }
-
-        .post-content p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            line-height: 1.9;
-        }
-
-        .post-content blockquote {
-            border-left: 4px solid var(--accent);
-            padding-left: 1.5rem;
-            margin: 2rem 0;
-            font-style: italic;
-            color: var(--secondary);
-            background: var(--pale-grey);
-            padding: 1.5rem;
-            border-radius: 0 10px 10px 0;
-        }
-
-        .post-content ul, .post-content ol {
-            margin: 1.5rem 0 1.5rem 2rem;
-        }
-
-        .post-content li {
-            margin-bottom: 0.75rem;
-            font-size: 1.1rem;
-        }
-
-        .highlight-box {
-            background: linear-gradient(135deg, var(--cream), var(--pale-grey));
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 2rem 0;
-            border-top: 3px solid var(--accent);
-        }
-
-        .highlight-box h3 {
-            margin-top: 0;
-        }
-
-        .cta-box {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            text-align: center;
-            margin: 3rem 0;
-        }
-
-        .cta-box h3 {
-            color: white;
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-        }
-
-        .cta-box p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: white;
-            color: var(--primary);
-            padding: 1rem 2rem;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 700;
-            font-family: 'Trebuchet MS', sans-serif;
-            transition: all 0.3s;
-            font-size: 1.1rem;
-        }
-
-        .cta-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 20px rgba(255,255,255,0.3);
-        }
-
-        .author-bio {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 3rem 0;
-            border-top: 3px solid var(--secondary);
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .author-avatar {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            flex-shrink: 0;
-        }
-
-        .author-info h4 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-            font-size: 1.3rem;
-        }
-
-        .author-info p {
-            margin: 0;
-            color: #666;
-            font-size: 1rem;
-        }
-
-        .share-buttons {
-            margin: 3rem 0;
-            text-align: center;
-        }
-
-        .share-buttons h4 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .share-buttons a {
-            display: inline-block;
-            margin: 0 0.5rem;
-            color: white;
-            text-decoration: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 25px;
-            transition: transform 0.3s;
-            font-weight: 600;
-        }
-
-        .share-buttons a:hover {
-            transform: translateY(-3px);
-        }
-
-        .share-facebook { background: #1877F2; }
-        .share-twitter { background: #1DA1F2; }
-        .share-pinterest { background: #E60023; }
-        .share-email { background: var(--secondary); }
-
-        .related-posts {
-            margin: 4rem 0;
-        }
-
-        .related-posts h3 {
-            color: var(--primary);
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .related-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .related-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(107, 76, 154, 0.1);
-            transition: transform 0.3s;
-            text-decoration: none;
-            color: var(--text);
-            border-top: 3px solid var(--accent);
-        }
-
-        .related-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .related-image {
-            height: 150px;
-            background: linear-gradient(135deg, var(--secondary), var(--accent));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-        }
-
-        .related-content {
-            padding: 1.5rem;
-        }
-
-        .related-content h4 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-
-        .related-content p {
-            font-size: 0.95rem;
-            color: #666;
-            margin: 0;
-        }
-
-        .back-to-blog {
-            text-align: center;
-            margin: 3rem 0;
-        }
-
-        .back-to-blog a {
-            display: inline-block;
-            color: var(--secondary);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: color 0.3s;
-        }
-
-        .back-to-blog a:hover {
-            color: var(--primary);
-        }
-
-        footer {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            text-align: center;
-            padding: 3rem 1rem;
-            margin-top: 4rem;
-        }
-
-        .footer-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .footer-quote {
-            font-style: italic;
-            font-size: 1.2rem;
-            margin: 1rem 0 2rem 0;
-            opacity: 0.95;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .social-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.5rem;
-            transition: transform 0.3s;
-            background: rgba(255,255,255,0.1);
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-        }
-
-        .social-links a:hover {
-            transform: scale(1.2);
-            background: rgba(255,255,255,0.2);
-        }
-
-        @media (max-width: 768px) {
-            .logo {
-                font-size: 2rem;
-            }
-
-            .post-title {
-                font-size: 2rem;
-            }
-
-            .post-content {
-                padding: 2rem 1.5rem;
-            }
-
-            .featured-image {
-                height: 250px;
-                font-size: 4rem;
-            }
-
-            nav ul {
-                gap: 1rem;
-            }
-
-            .author-bio {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .related-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cta-box {
-                padding: 2rem 1.5rem;
-            }
-        }
-    </style>
+    <title>More Than A Hobby-Being Seen as a creator, not just a consumer | Southpaw Handmade</title>
+    <meta name="description" content="Discover why making is more than a hobby. Reclaim your identity as a creator, embrace your creative voice, and let yourself be seen for what you make.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <header>
-        <div class="logo">✨ Southpaw Handmade ✨</div>
-        <p class="tagline">Curious Hands. Creative Heart.</p>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/patterns">Patterns</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/shop">Shop</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <div class="breadcrumb">
-        <a href="/">Home</a>
-        <span>›</span>
-        <a href="/blog">Blog</a>
-        <span>›</span>
-        <span>More Than a Hobby: Being Seen as a Creator, Not Just a Consumer</span>
+<header class="site-header">
+    <div class="logo">
+        <span>Southpaw Handmade</span>
+        <small>Curious Hands. Creative Heart.</small>
     </div>
-    <article>
-        <div class="post-header">
-            <div class="post-category">Permission to Play</div>
-            <h1 class="post-title">More Than a Hobby: Being Seen as a Creator, Not Just a Consumer</h1>
-            <div class="post-meta">
-                <span>📅 January 10, 2026</span>
-                <span>•</span>
-                <span>☕ 6 min read</span>
-            </div>
-        </div>
-
-        <div class="featured-image">🎨</div>
-        <h1>More Than a Hobby: Being Seen as a Creator, Not Just a Consumer</h1>
+    <nav>
+        <a href="#imagine">Imagine</a>
+        <a href="#create">Create</a>
+        <a href="#journal">Journal</a>
+        <a href="#shop">Shop</a>
+    </nav>
+</header>
+<h1>More Than a Hobby: Being Seen as a Creator, Not Just a Consumer</h1>
 <p>Scrolling. Pinning. Watching tutorials. Liking. Saving. Repeat. Sound familiar? It’s easy to feel like your creativity only exists in the digital ether, a spectator in a world of makers. But here’s the thing: you are <em>more than a hobbyist.</em> You’re a creator. And it’s time the world sees you that way. </p>
 <h3>Identity as a Maker </h3>
 <p> For too long, words like “crafty” have been tossed around like cute little labels—sometimes endearing, sometimes dismissive. But let’s reclaim it. To be crafty is to make things with intention, skill, and care. It’s a badge of honor, not a side note. </p>
@@ -555,130 +39,44 @@
 <p> The first can feel like a shrug, a subtle dismissal. The second? It’s recognition. It’s acknowledgment that your hands, your ideas, and your effort created something tangible. </p>
 <p> Learning to accept compliments, to own your skills, and to say with pride, “Yes, I made that” is part of claiming your identity as a creator. Because making is not just about objects—it’s about presence, intention, and showing up as yourself. </p>
 <h3> Finding Your Creative Voice </h3>
-<p> How do you make sure every project carries you? </p>
-<ul>
- <li><em>Infuse personal touches—colors, patterns, or techniques that make your work unmistakably yours. </li></em>
- <li><em> Experiment freely—push boundaries, embrace happy accidents, let mistakes guide you. </li></em>
- <li><em> Reflect on your why—ask yourself, “Why do I love this?” The answer will guide every stitch, brushstroke, or idea. </li></em>
- <li><em> Share selectively—choose spaces and people who celebrate your work, not just your aesthetic. </li></em>
-</ul
-<p>Your creative voice grows with every project, every “oops,” and every finish line crossed. And trust me—it’s worth it. </p>
-<h3>Be Seen, Start Making </h3>
+<p> How do you make sure every project carries you? </p><ul>
+* <li><em>Infuse personal touches—colors, patterns, or techniques that make your work unmistakably yours. </li></em>
+* <li><em> Experiment freely—push boundaries, embrace happy accidents, let mistakes guide you. </li></em>
+* <li><em> Reflect on your why—ask yourself, “Why do I love this?” The answer will guide every stitch, brushstroke, or idea. </li></em>
+* <li><em> Share selectively—choose spaces and people who celebrate your work, not just your aesthetic. </li></em></ul
+<p> Your creative voice grows with every project, every “oops,” and every finish line crossed. And trust me—it’s worth it. </p>
+<h3> CTA: Be Seen, Start Making </h3>
 <p> You don’t have to wait for permission. Start small, start bold, start messy. Try one of my signature patterns [link], or take our quick maker quiz to discover your creative style [link]. Step into the spotlight. You are not just consuming—you are creating. </p>
 <div class="share-buttons">
-            <h4>Share this post</h4>
-            <a href="#" class="share-facebook">Facebook</a>
-            <a href="#" class="share-twitter">Twitter</a>
-            <a href="#" class="share-pinterest">Pinterest</a>
-            <a href="#" class="share-email">Email</a>
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-brand">
+            <h3>Southpaw Handmade</h3>
+            <p>Curious Hands. Creative Heart.</p>
+            <p>Permission to Play.</p>
         </div>
-
-        <div class="author-bio">
-            <div class="author-avatar">✨</div>
-            <div class="author-info">
-                <h4>About the Maker</h4>
-                <p>At Southpaw Handmade, we believe creativity isn't a luxury—it's survival. We create patterns and designs that help makers reclaim their right to play, one whimsical project at a time.</p>
+        <div class="footer-links">
+            <div>
+                <h4>Explore</h4>
+                <a href="/start/">Start Here</a>
+                <a href="/journal/">Journal</a>
+                <a href="/about/">About</a>
+            </div>
+            <div>
+                <h4>Make Something</h4>
+               <!-- <a href="/patterns/">Sewing Patterns</a>-->
+                <a href="https://www.spoonflower.com/profiles/southpawhandmade">Shop Fabrics</a>
+                <!--<a href="/projects/">Projects</a>-->
+            </div>
+            <div>
+                <h4>Connect</h4>
+                <a href="/subscribe/">Join the Community</a>
+                <a href="www.pinterest.com/southpawhandmade">Pinterest</a>
+                <a href="www.instagram.com/southpawhandmade">Instagram</a>
             </div>
         </div>
- <div class="related-posts">
-            <h3>Continue Reading</h3>
-            <div class="related-grid">
-                <a href="/blog/when-did-creativity-start-needing-a-ROI" class="related-card">
-                    <div class="related-image">✨</div>
-                    <div class="related-content">
-                        <h4>When Did Creativity Start Needing a ROI?</h4>
-                        <p>When did creativity stop being something we did and start being something we had to justify? This post explores how making for joy slowly turned into making for results and why your creativity does not owe anyone productivity, profit, or proof. A gentle reminder that creating simply because it feels good is reason enough.</p>
-                    </div>
-                </a>
-                <a href="/blog/whatever-happened-to-whimsy" class="related-card">
-                    <div class="related-image">🎪</div>
-                    <div class="related-content">
-                        <h4>Whatever Happened to Whimsy?</h4>
-                        <p>How Adulthood muted the fun-and how to turn the volume back up.</p>
-                    </div>
-                </a>
-                <a href="/blog/why-making-something-you-can-touch-feels-different-than-digital" class="related-card">
-                    <div class="related-image">🌟</div>
-                    <div class="related-content">
-                        <h4>Why Making Something You Can Touch Feels Different Than Digital</h4>
-                        <p>How physical making reconnects us to our hands, our time, and ourselves.</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <div class="back-to-blog">
-            <a href="/blog">← Back to All Posts</a>
-        </div>
-    </article>
-
-    <footer>
-        <div class="footer-content">
-            <p><strong>Southpaw Handmade</strong></p>
-            <p class="footer-quote">"Your creativity deserves better than basic, and you don't need anyone's permission to make something wonderful."</p>
-            <div class="social-links">
-                <a href="#" title="Instagram">📷</a>
-                <a href="#" title="Pinterest">📌</a>
-                <a href="#" title="Facebook">👍</a>
-                <a href="#" title="YouTube">▶️</a>
-            </div>
-            <p style="margin-top: 2rem; font-size: 0.9rem;">&copy; 2026 Southpaw Handmade. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Share buttons functionality
-        document.querySelector('.share-facebook').addEventListener('click', function(e) {
-            e.preventDefault();
-            window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), 'facebook-share', 'width=580,height=296');
-        });
-
-        document.querySelector('.share-twitter').addEventListener('click', function(e) {
-            e.preventDefault();
-            const text = document.querySelector('.post-title').textContent;
-            window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(window.location.href), 'twitter-share', 'width=550,height=235');
-        });
-
-        document.querySelector('.share-pinterest').addEventListener('click', function(e) {
-            e.preventDefault();
-            const title = document.querySelector('.post-title').textContent;
-            window.open('https://pinterest.com/pin/create/button/?url=' + encodeURIComponent(window.location.href) + '&description=' + encodeURIComponent(title), 'pinterest-share', 'width=750,height=550');
-        });
-
-        document.querySelector('.share-email').addEventListener('click', function(e) {
-            e.preventDefault();
-            const title = document.querySelector('.post-title').textContent;
-            window.location.href = 'mailto:?subject=' + encodeURIComponent(title) + '&body=' + encodeURIComponent('Check out this post: ' + window.location.href);
-        });
-
-        // Reading progress indicator
-        window.addEventListener('scroll', function() {
-            const article = document.querySelector('article');
-            const articleTop = article.offsetTop;
-            const articleHeight = article.offsetHeight;
-            const scrollPosition = window.pageYOffset;
-            const windowHeight = window.innerHeight;
-            
-            const progress = ((scrollPosition - articleTop + windowHeight) / articleHeight) * 100;
-            
-            if (progress > 0 && progress < 100) {
-                document.body.style.background = `linear-gradient(to bottom, var(--accent) ${progress}%, var(--cream) ${progress}%)`;
-            }
-        });
-    </script>
-</body>
-</html>
-
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 Southpaw Handmade. All rights reserved.</p>
+    </div>
+</footer>
